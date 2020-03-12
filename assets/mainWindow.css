@@ -7,6 +7,22 @@
 #F3E0DC - Whiteish
 
 */
+
+/* utility classes */
+.left-buffer {
+  margin-left: 20px;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+
+
 body {
     width: 100%;
     height: 100%;
@@ -61,6 +77,12 @@ a {
     width: calc(100% - 12rem);
     margin-left: 12rem;
     transition: all 0.4s;
+  }
+
+  .currentViewContainer {
+    width: 90%;
+    margin: 10px auto;
+
   }
   
   /* for toggle behavior */
@@ -131,3 +153,34 @@ a {
     margin-right: 10px;
   }
   
+
+  /* table */
+
+  .dataTables_filter {
+    text-align: left !important;
+  }
+
+  .dataTables_filter label {
+    width: 90% !important;
+  }
+
+  .dataTables_filter input {
+    width: 100% !important;
+  }
+
+  /* top Buttons */
+  .topButtonContainer {
+    text-align: right;
+    margin-bottom: 25px;
+  }
+
+  /* modal */
+  .detailsContainer {
+    width: 70%;
+    text-align: left;
+  }
+
+  .modal-footer {
+    display: block;
+  }
+
