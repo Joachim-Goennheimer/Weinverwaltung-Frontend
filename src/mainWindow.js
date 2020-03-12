@@ -40,6 +40,9 @@ function logoutUser() {
 
 }
 
-function doBackup() {
+function loadBackupView() {
+
+    $('#currentViewContent').load('./views/datensicherungView.html');
+
 
 }

@@ -2,7 +2,7 @@
 
 <div class="topButtonContainer">
 
-    <button type="button" class="btn btn-outline-primary"><i class="far fa-plus-square"></i> Neuer Wein</button>
+    <button type="button" class="btn btn-outline-primary" data-target="#wineAddModal" data-toggle="modal"><i class="far fa-plus-square"></i> Neuer Wein</button>
 
 </div>
 
@@ -24,7 +24,7 @@
             <td>Baden</td>
             <td>2018</td>
             <td>20</td>
-            <td data-toggle="modal" data-target="#exampleModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+            <td data-toggle="modal" data-target="#wineDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
             <td><i class="far fa-plus-square"></i></td>
         </tr>
         <tr>
@@ -43,12 +43,12 @@
 
 
   
-  <!-- Modal -->
-  <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- Wine Edit Modal -->
+  <div class="modal fade bd-example-modal-lg" id="wineDetailsModalCenter" tabindex="-1" role="dialog" aria-labelledby="wineDetailsModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Test Guter Wein 2</h5>
+          <h5 class="modal-title" id="wineDetailsModalLongTitle">Test Guter Wein 2</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -90,6 +90,64 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-danger align-left">Wein entfernen</button>
           <button type="button" class="btn btn-outline-primary align-right">Sichern</button>
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- Wine Add Modal -->
+  <div class="modal fade bd-example-modal-lg" id="wineAddModal" tabindex="-1" role="dialog" aria-labelledby="wineAddModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="wineAddModalLongTitle">Neuen Wein hinzufügen</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="detailsContainer">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input id="wineNameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Lage</span>
+                    </div>
+                    <input id="wineLageInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Jahrgang</span>
+                    </div>
+                    <input id="wineLageInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Anzahl</span>
+                    </div>
+                        <input type="number" value="42" id="example-number-input">
+                    </div>
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary align-right">Hinzufügen</button>
           <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
         </div>
       </div>
