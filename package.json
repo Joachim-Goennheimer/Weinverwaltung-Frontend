@@ -1,0 +1,15 @@
+{
+  "name": "weinverwaltung",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leon Feldmann, Maximilian Urbanek, Joachim Gönnheimer",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.1.1"
+  }
+}

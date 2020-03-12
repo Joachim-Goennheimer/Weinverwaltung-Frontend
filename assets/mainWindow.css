@@ -1,0 +1,134 @@
+/* Colors: Rose red and blueberry
+
+#4285F4 - blue
+#5C2018 - brown-red
+#BC4639 - red
+#D4A59A - beige
+#F3E0DC - Whiteish
+
+*/
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    min-height: 100%;
+    height: 100%;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+
+
+
+.leftNavbar-first {
+    background-color: #5C2018;
+    min-width: 8rem;
+    width: 8rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+
+a {
+    color: #fff;
+}
+/* change the brand and text color */
+.leftNavbar-first .navbar-brand,
+.leftNavbar-first .navbar-text {
+    color: #D4A59A;
+}
+/* change the link color */
+.leftNavbar-first .navbar-nav .nav-link {
+    color: #D4A59A;
+}
+/* change the color of active or hovered links */
+.leftNavbar-first .nav-item.active .nav-link,
+.leftNavbar-first .nav-item:hover .nav-link {
+    color: #F3E0DC;
+}
+
+.bottomNavItems {
+    margin-top: 60vh;
+}
+
+.leftNavbar-second {
+    background-color: #BC4639;
+    min-width: 10rem;
+    width: 10rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 8rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+  .app-content {
+    width: calc(100% - 8rem - 10rem);
+    margin-left: 18rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+  /*
+  *
+  * ==========================================
+  * FOR DEMO PURPOSE
+  * ==========================================
+  *
+  */
+  
+  body {
+    /* background: #599fd9; */
+    /* background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c); */
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  
+  .text-gray {
+    color: #aaa;
+  }
+  
