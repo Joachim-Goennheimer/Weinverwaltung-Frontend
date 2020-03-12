@@ -25,8 +25,8 @@ body {
 
 .leftNavbar-first {
     background-color: #5C2018;
-    min-width: 8rem;
-    width: 8rem;
+    min-width: 12rem;
+    width: 12rem;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -57,21 +57,9 @@ a {
     margin-top: 60vh;
 }
 
-.leftNavbar-second {
-    background-color: #BC4639;
-    min-width: 10rem;
-    width: 10rem;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 8rem;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
-}
-
   .app-content {
-    width: calc(100% - 8rem - 10rem);
-    margin-left: 18rem;
+    width: calc(100% - 12rem);
+    margin-left: 12rem;
     transition: all 0.4s;
   }
   
@@ -130,5 +118,16 @@ a {
   
   .text-gray {
     color: #aaa;
+  }
+
+  /* icons */
+  .fas {
+    color: #fff !important;
+  }
+
+  .iconSpan {
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
   }
   
