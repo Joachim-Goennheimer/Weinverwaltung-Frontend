@@ -14,7 +14,7 @@ function loginUser() {
       }
     })
     win.loadFile('./src/mainWindow.html')
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     remote.getCurrentWindow().close();
 

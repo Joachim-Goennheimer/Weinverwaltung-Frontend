@@ -33,7 +33,7 @@ function logoutUser() {
       }
     })
     win.loadFile('./src/loginWindow.html')
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     remote.getCurrentWindow().close();
 

@@ -9,21 +9,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/loginWindow.css">
 
-    <title>Hello, world!</title>
   </head>
   <body>
 
-    <div class='loginContainer'>
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <h1>Weinhandlung Gute Weine</h1>
 
+    <div class='loginContainer'>
+        
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
 
         <div class="buttonsContainer">
 
-          <button type="submit" class="btn btn-primary" onclick="loginUser()">Log in</button>
-          <button type="submit" class="btn btn-primary" onclick="resetPassword()">Forgot Password</button>
+          <button type="submit" class="btn btn-outline-dark" onclick="loginUser()">Einloggen</button>
+          <a class="align-right" onclick="resetPassword()">Passwort ändern</a>
 
         </div>
     </div>
