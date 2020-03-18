@@ -53,7 +53,11 @@ body {
 }
 
 
+/* Navbar Styles */
 
+.active {
+  background-color: #D4A59A;
+}
 
 .leftNavbar-first {
     background-color: #5C2018;
@@ -93,6 +97,8 @@ a {
     width: calc(100% - 12rem);
     margin-left: 12rem;
     transition: all 0.4s;
+    height: 100vh;
+    min-height: 100vh;
   }
 
   .currentViewContainer {
@@ -163,6 +169,11 @@ a {
 
   /* table */
 
+  .tableContainer {
+    height: 68vh;
+
+  }
+
   .dataTables_filter {
     text-align: left !important;
   }
@@ -221,6 +232,7 @@ a {
 
   .mainListView {
     display: inline-block;
+    width: 80vh;
   }
   .currentCustomersListContainer {
     height: 100vh;
@@ -255,4 +267,25 @@ a {
     margin-bottom: 5px;
   }
 
+  .purchaseListButtonOuterContainer {
+    /* position: absolute;
+    bottom: 0; */
+    margin-bottom: 5px;
+
+  }
+
+  .purchaseListButtonInnerContainer {
+    position: relative;
+  }
+
+
+  /* WinzerView */
+
+  #preislisteLink {
+    color: #4285F4;
+  }
+
+  #newWinzerOrtInput {
+    width: 200px;
+  }
 
