@@ -18,7 +18,7 @@
             <th>Verkaufsliste</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="wineTableBody">
         <tr>
             <td>Test Guter Wein 2</td>
             <td>Baden</td>
@@ -68,21 +68,40 @@
                     <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Lage</span>
                     </div>
-                    <input id="wineLageInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="wineRegionInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Jahrgang</span>
                     </div>
-                    <input id="wineLageInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="wineYearInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Einkaufspreis</span>
+                  </div>
+                  <input id="wineBuyingPriceInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Verkaufspreis</span>
+                </div>
+                <input id="wineSellingPriceInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Anzahl</span>
                     </div>
-                        <input type="number" value="42" id="example-number-input"><i class="far fa-plus-square left-buffer"></i>  Zu Verkaufsliste hinzufügen
+                        <input id="wineAmountInput" type="number" value="42"><i class="far fa-plus-square left-buffer"></i>  Verkaufsliste
                     </div>
+
+                    <div class="input-group input-group-sm mb-3">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">Lager</span>
+                      </div>
+                      <input id="wineStorageLocationInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                  </div>
 
             </div>
 
@@ -159,29 +178,4 @@
 
 
 
-
-<script>
-    $(document).ready(function() {
-    $('#wineTable').DataTable({
-        "scrollY":        "350px",
-        "scrollCollapse": true,
-        "paging":         false
-    });
-} );
-
-
-
-
-function loadDetailsIntoModal(wineId) {
-
-    $('#wineNameInput').val('Test Guter Wein 2');
-    $('#wineLageInput').val('Baden');
-    $('#Jahrgang').val('2018');
-    $('#Anzahl').val('Baden');
-
-
-
-
-
-}
-</script>
+<script src="./views/wineView.js"></script>

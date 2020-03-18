@@ -48,6 +48,10 @@ body {
     padding: 0 0;
 }
 
+.viewHeadline {
+  text-align: center;
+}
+
 
 
 
@@ -125,18 +129,9 @@ a {
     }
   }
   
-  /*
-  *
-  * ==========================================
-  * FOR DEMO PURPOSE
-  * ==========================================
-  *
-  */
+  
   
   body {
-    /* background: #599fd9; */
-    /* background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-    background: linear-gradient(to right, #599fd9, #c2e59c); */
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -210,3 +205,54 @@ a {
   #datensicherungSpinner {
     text-align: center;
   }
+
+
+
+  /* input-group for modals */
+
+  .input-group-prepend {
+    width: 150px;
+  }
+
+
+
+
+  /* VerkaufslisteView */
+
+  .mainListView {
+    display: inline-block;
+  }
+  .currentCustomersListContainer {
+    height: 100vh;
+    width: 12rem;
+    min-width: 12rem;
+    float: right;
+    margin-right: -30px;
+  }
+
+  .currentCustomerDetailsContainer > p {
+    margin-bottom: 0px;
+  }
+
+  .attributeSpan {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .selected {
+    background-color: #4285F4;
+    color: #fff;
+  }
+
+.addCustomerListButtonContainer {
+
+  height: 45px;
+  }
+
+  #addCustomerListButton {
+    display: block;
+    float: right;
+    margin-bottom: 5px;
+  }
+
+

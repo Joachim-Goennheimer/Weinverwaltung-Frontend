@@ -1,6 +1,8 @@
 const { remote } = require('electron')
 const { BrowserWindow } = remote
 
+let apiServerAddress = "mockAPI";
+
 function loadVerkaufslisteView() {
     $('#currentViewContent').load('./views/verkaufslisteView.html');
 
