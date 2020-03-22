@@ -1,0 +1,701 @@
+openapi: 3.0.0
+info:
+  title: Wine Management
+  description: |
+    This an Api Specification for a wine management system.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/FunGuy-00/pflichtenheft/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /wine:
+    get:
+      tags:
+      - wine
+      summary: Get list of wines
+      operationId: wineGET
+      responses:
+        "200":
+          description: Success
+        "400":
+          description: Invalid value
+        "404":
+          description: Page not found
+      x-swagger-router-controller: Wine
+    post:
+      tags:
+      - wine
+      summary: Create a new wine entry
+      operationId: winePOST
+      responses:
+        "201":
+          description: Entry is created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Wine'
+                x-content-type: application/json
+        "400":
+          description: Invalid value
+        "405":
+          description: Validation exception
+      x-swagger-router-controller: Wine
+  /wine/{wineId}:
+    get:
+      tags:
+      - wine
+      summary: Find wine by ID
+      description: Returns a single wine
+      operationId: getWineById
+      parameters:
+      - name: wineId
+        in: path
+        description: ID of wine to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wine'
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Wine not found
+      x-swagger-router-controller: Wine
+    put:
+      tags:
+      - wine
+      summary: Updates a wine in the store with form data
+      operationId: updateWine
+      parameters:
+      - name: wineId
+        in: path
+        description: ID of wine that needs to be updated
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/WineArray'
+      responses:
+        "200":
+          description: Successful Update
+        "405":
+          description: Invalid input
+      x-swagger-router-controller: Wine
+    delete:
+      tags:
+      - wine
+      summary: Deletes a wine
+      operationId: deleteWine
+      parameters:
+      - name: wineId
+        in: path
+        description: Wine id to delete
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Wine not found
+      x-swagger-router-controller: Wine
+  /customer:
+    get:
+      tags:
+      - customer
+      summary: Get list of customers
+      operationId: customerGET
+      responses:
+        "200":
+          description: Success
+        "400":
+          description: Invalid value
+        "404":
+          description: Page not found
+      x-swagger-router-controller: Customer
+    post:
+      tags:
+      - customer
+      summary: Create a new customer entry
+      operationId: customerPOST
+      responses:
+        "201":
+          description: Entry is created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+                x-content-type: application/json
+        "400":
+          description: Invalid value
+        "405":
+          description: Validation exception
+      x-swagger-router-controller: Customer
+  /customer/{customerId}:
+    get:
+      tags:
+      - customer
+      summary: Find customer by ID
+      description: Returns a single customer
+      operationId: getCustomerById
+      parameters:
+      - name: customerId
+        in: path
+        description: ID of customer to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Customer not found
+      x-swagger-router-controller: Customer
+    put:
+      tags:
+      - customer
+      summary: Updates a customer in the store with form data
+      operationId: updateCustomer
+      parameters:
+      - name: customerId
+        in: path
+        description: ID of customer that needs to be updated
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/CustomerArray'
+      responses:
+        "200":
+          description: Successful Update
+        "405":
+          description: Invalid input
+      x-swagger-router-controller: Customer
+    delete:
+      tags:
+      - customer
+      summary: Deletes a customer
+      operationId: deleteCustomer
+      parameters:
+      - name: customerId
+        in: path
+        description: customer id to delete
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Customer not found
+      x-swagger-router-controller: Customer
+  /winemaker:
+    get:
+      tags:
+      - winemaker
+      summary: Get list of winemaker
+      operationId: winemakerGET
+      responses:
+        "200":
+          description: Success
+        "400":
+          description: Invalid value
+        "404":
+          description: Page not found
+      x-swagger-router-controller: Winemaker
+    post:
+      tags:
+      - winemaker
+      summary: Create a new winemaker entry
+      operationId: winemakerPOST
+      responses:
+        "201":
+          description: Entry is created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Winemaker'
+                x-content-type: application/json
+        "400":
+          description: Invalid value
+        "405":
+          description: Validation exception
+      x-swagger-router-controller: Winemaker
+  /winemaker/{winemakerId}:
+    get:
+      tags:
+      - winemaker
+      summary: Find winemaker by ID
+      description: Returns a single winemaker
+      operationId: getWinemakerById
+      parameters:
+      - name: winemakerId
+        in: path
+        description: ID of winemaker to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Winemaker'
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Winemaker not found
+      x-swagger-router-controller: Winemaker
+    put:
+      tags:
+      - winemaker
+      summary: Updates a winemaker in the store with form data
+      operationId: updateWinemaker
+      parameters:
+      - name: winemakerId
+        in: path
+        description: ID of winemaker that needs to be updated
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/WinemakerInfo'
+      responses:
+        "200":
+          description: Update Successful
+        "405":
+          description: Invalid input
+      x-swagger-router-controller: Winemaker
+    delete:
+      tags:
+      - winemaker
+      summary: Deletes a winemaker
+      operationId: deleteWinemaker
+      parameters:
+      - name: winemakerId
+        in: path
+        description: winemaker id to delete
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Winemaker not found
+      x-swagger-router-controller: Winemaker
+  /completePurchase:
+    post:
+      tags:
+      - purchase
+      summary: Finish a Purchase
+      operationId: completePurchasePOST
+      responses:
+        "201":
+          description: Entry is created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purchase'
+                x-content-type: application/json
+        "400":
+          description: Invalid value
+        "405":
+          description: Validation exception
+      x-swagger-router-controller: Purchase
+components:
+  schemas:
+    Wine:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        anzahl:
+          type: integer
+          format: int64
+        name:
+          type: string
+        jahrgang:
+          type: integer
+          format: int64
+        lage:
+          type: string
+        herkunftsland:
+          type: string
+        region:
+          type: string
+        einkaufspreis:
+          type: integer
+          format: double
+        verkaufspreis:
+          type: integer
+          format: double
+        lagerort:
+          type: string
+        bild:
+          type: string
+          format: binary
+      example:
+        lage: lage
+        verkaufspreis: 5
+        lagerort: lagerort
+        bild: ""
+        jahrgang: 1
+        anzahl: 6
+        herkunftsland: herkunftsland
+        name: name
+        id: 0
+        region: region
+        einkaufspreis: 5
+    Customer:
+      required:
+      - adress
+      - firstName
+      - id
+      - lastName
+      - newsletter
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        lastName:
+          type: string
+        adress:
+          type: array
+          items:
+            $ref: '#/components/schemas/Adress'
+        phoneNumber:
+          type: string
+        email:
+          type: string
+        newsletter:
+          type: boolean
+        purchaseHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/PurchaseHistory'
+        recommendations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recommendations'
+      example:
+        firstName: firstName
+        lastName: lastName
+        newsletter: true
+        purchaseHistory:
+        - id: 5
+          wine:
+          - lage: lage
+            verkaufspreis: 5
+            lagerort: lagerort
+            bild: ""
+            jahrgang: 1
+            anzahl: 6
+            herkunftsland: herkunftsland
+            name: name
+            id: 0
+            region: region
+            einkaufspreis: 5
+          - lage: lage
+            verkaufspreis: 5
+            lagerort: lagerort
+            bild: ""
+            jahrgang: 1
+            anzahl: 6
+            herkunftsland: herkunftsland
+            name: name
+            id: 0
+            region: region
+            einkaufspreis: 5
+          timestamp: 5
+        - id: 5
+          wine:
+          - lage: lage
+            verkaufspreis: 5
+            lagerort: lagerort
+            bild: ""
+            jahrgang: 1
+            anzahl: 6
+            herkunftsland: herkunftsland
+            name: name
+            id: 0
+            region: region
+            einkaufspreis: 5
+          - lage: lage
+            verkaufspreis: 5
+            lagerort: lagerort
+            bild: ""
+            jahrgang: 1
+            anzahl: 6
+            herkunftsland: herkunftsland
+            name: name
+            id: 0
+            region: region
+            einkaufspreis: 5
+          timestamp: 5
+        phoneNumber: phoneNumber
+        adress:
+        - country: country
+          city: city
+          streetNumber: streetNumber
+          street: street
+          postalCode: 1
+          id: 6
+        - country: country
+          city: city
+          streetNumber: streetNumber
+          street: street
+          postalCode: 1
+          id: 6
+        id: 0
+        recommendations:
+        - id: 2
+          wineId:
+          - null
+          - null
+        - id: 2
+          wineId:
+          - null
+          - null
+        email: email
+    Adress:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        country:
+          type: string
+        postalCode:
+          type: integer
+          format: int64
+        city:
+          type: string
+        street:
+          type: string
+        streetNumber:
+          type: string
+      example:
+        country: country
+        city: city
+        streetNumber: streetNumber
+        street: street
+        postalCode: 1
+        id: 6
+    Winemaker:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        firstName:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        adress:
+          type: array
+          items:
+            $ref: '#/components/schemas/Adress'
+        listLink:
+          type: string
+      example:
+        firstName: firstName
+        phoneNumber: phoneNumber
+        listLink: listLink
+        adress:
+        - country: country
+          city: city
+          streetNumber: streetNumber
+          street: street
+          postalCode: 1
+          id: 6
+        - country: country
+          city: city
+          streetNumber: streetNumber
+          street: street
+          postalCode: 1
+          id: 6
+        id: 0
+        email: email
+        lastname: lastname
+    PurchaseHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        wine:
+          type: array
+          items:
+            $ref: '#/components/schemas/Wine'
+        timestamp:
+          type: integer
+          format: date
+      example:
+        id: 5
+        wine:
+        - lage: lage
+          verkaufspreis: 5
+          lagerort: lagerort
+          bild: ""
+          jahrgang: 1
+          anzahl: 6
+          herkunftsland: herkunftsland
+          name: name
+          id: 0
+          region: region
+          einkaufspreis: 5
+        - lage: lage
+          verkaufspreis: 5
+          lagerort: lagerort
+          bild: ""
+          jahrgang: 1
+          anzahl: 6
+          herkunftsland: herkunftsland
+          name: name
+          id: 0
+          region: region
+          einkaufspreis: 5
+        timestamp: 5
+    Recommendations:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        wineId:
+          type: array
+          items:
+            $ref: '#/components/schemas/Wine'
+      example:
+        id: 2
+        wineId:
+        - null
+        - null
+    Purchase:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        wines:
+          type: array
+          items:
+            $ref: '#/components/schemas/Wine'
+        purchaseSum:
+          type: integer
+          format: int64
+      example:
+        wines:
+        - lage: lage
+          verkaufspreis: 5
+          lagerort: lagerort
+          bild: ""
+          jahrgang: 1
+          anzahl: 6
+          herkunftsland: herkunftsland
+          name: name
+          id: 0
+          region: region
+          einkaufspreis: 5
+        - lage: lage
+          verkaufspreis: 5
+          lagerort: lagerort
+          bild: ""
+          jahrgang: 1
+          anzahl: 6
+          herkunftsland: herkunftsland
+          name: name
+          id: 0
+          region: region
+          einkaufspreis: 5
+        purchaseSum: 6
+        id: 0
+  requestBodies:
+    WineArray:
+      description: List of Wines
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Wine'
+    CustomerArray:
+      description: Details about the Customer
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Customer'
+    WinemakerInfo:
+      description: Details about the Winemaker
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Winemaker'
+    PurchaseInfo:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Purchase'
