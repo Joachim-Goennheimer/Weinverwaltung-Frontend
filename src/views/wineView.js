@@ -17,7 +17,7 @@ function loadWineIntoTable() {
 
         "id": "12345",
         "amount": 10,
-        "name": "guter Roter",
+        "name": "Guter Roter",
         "year": 2018,
         "origin": "Germany",
         "region": "Baden",
@@ -54,7 +54,7 @@ function createWineTableEntry(wineObject) {
                             +'<td>'+ wineObject.year +'</td>'
                             +'<td>'+ wineObject.amount +'</td>'
                             +'<td data-toggle="modal" data-target="#wineDetailsModalCenter" onclick="loadDetailsIntoModal('+ wineObject.id+ ')"><i class="fas fa-info"></i></td>'
-                            +'<td onclick="loadAddToPurchaseListPopUp('+ wineObject.id +')"><i class="far fa-plus-square"></i></td>'
+                            +'<td data-toggle="modal" data-target="#addToPurchaseListModal" onclick="loadDetailsIntoPurchaseListModal('+ wineObject.id +')"><i class="far fa-plus-square"></i></td>'
                         '</tr>';
 
 
@@ -74,7 +74,7 @@ var currentWine = {
 
     "id": "12345",
     "amount": 10,
-    "name": "guter Roter",
+    "name": "Guter Roter",
     "year": 2018,
     "origin": "Germany",
     "region": "Baden",
@@ -86,6 +86,7 @@ var currentWine = {
 }
 
   
+    $('#wineDetailsModalLongTitle').text(currentWine.name);
     $('#wineNameInput').val(currentWine.name);
     $('#wineRegionInput').val(currentWine.region);
     $('#wineYearInput').val(currentWine.year);
@@ -96,6 +97,40 @@ var currentWine = {
 
 }
 
-function loadAddToPurchaseListPopUp() {
+function loadDetailsIntoPurchaseListModal(wineId) {
+
+    var currentWine = {
+
+        "id": "12345",
+        "amount": 10,
+        "name": "Guter Roter",
+        "year": 2018,
+        "origin": "Germany",
+        "region": "Baden",
+        "buyingPrice": 5.10,
+        "sellingPrice": 10.50,
+        "storageLocation": "R125",
+        "picture": Blob
+    
+    }
+    
+      
+        $('#wineNameField').text(currentWine.name);
+        $('#wineAmountPurchaseList').val(1);
+        $('#customerSelected').text($('#dropdown-1').text());
+        // $('#wineRegionInput').val(currentWine.region);
+        // $('#wineYearInput').val(currentWine.year);
+        // $('#wineAmountInput').val(currentWine.amount);
+        // $('#wineBuyingPriceInput').val(currentWine.buyingPrice);
+        // $('#wineSellingPriceInput').val(currentWine.sellingPrice);
+        // $('#wineStorageLocationInput').val(currentWine.storageLocation);
+
+}
+
+function updateCustomerSelected() {
+    let newCustomerId = event.target.id;
+    let newCustomerName = $('#' + newCustomerId).text();
+
+    $('#customerSelected').text(newCustomerName);
 
 }

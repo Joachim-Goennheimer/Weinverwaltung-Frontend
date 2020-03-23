@@ -194,8 +194,19 @@ a {
 
   /* modal */
   .detailsContainer {
-    width: 70%;
+    width: 65%;
     text-align: left;
+    float: left;
+  }
+
+  .pictureContainer {
+    width: 30%;
+    float: right;
+    overflow: hidden;
+  }
+
+  #detailsImage {
+    width: 100%;
   }
 
   .modal-footer {

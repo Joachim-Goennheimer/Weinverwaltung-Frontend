@@ -25,20 +25,71 @@
             <td>2018</td>
             <td>20</td>
             <td data-toggle="modal" data-target="#wineDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
-            <td><i class="far fa-plus-square"></i></td>
+            <td data-toggle="modal" data-target="#addToPurchaseListModal" onclick="loadDetailsIntoPurchaseListModal(12345)">
+              <i class="far fa-plus-square"></i>
+            </td>
         </tr>
         <tr>
             <td>Guter Wein 1</td>
             <td>Italien</td>
             <td>2005</td>
             <td>25</td>
-            <td><i class="fas fa-info"></i></td>
-            <td><i class="far fa-plus-square"></i></td>
+            <td data-toggle="modal" data-target="#wineDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+            <td data-toggle="modal" data-target="#addToPurchaseListModal" onclick="loadDetailsIntoPurchaseListModal(12345)">
+              <i class="far fa-plus-square"></i>
+            </td>
         </tr>
     </tbody>
 </table>
 
 
+<!-- add to purchaselist Modal -->
+<div class="modal fade" id="addToPurchaseListModal" tabindex="-1" role="dialog" aria-labelledby="addToPurchaseListModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addToPurchaseListModalLabel">Zu Verkaufsliste hinzufügen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+          </div>
+          <p id="wineNameField" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"></p>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Anzahl</span>
+          </div>
+              <input id="wineAmountPurchaseList" type="number" value="42">
+          </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Kunde</span>
+          </div>
+                <div class="btn-group">
+                  <button id="customerSelected" type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Kunde wählen
+                  </button>
+                  <div class="dropdown-menu">
+                    <a id="dropdown-1" class="dropdown-item" href="#" onclick="updateCustomerSelected()">Mike Müller</a>
+                    <a id="dropdown-2" class="dropdown-item" href="#" onclick="updateCustomerSelected()">Marvin Maier</a>
+                  </div>
+                </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary align-left" data-dismiss="modal">Abbrechen</button>
+        <button type="button" class="btn btn-outline-primary align-right">Hinzufügen</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -48,7 +99,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="wineDetailsModalLongTitle">Test Guter Wein 2</h5>
+          <h5 class="modal-title" id="wineDetailsModalLongTitle"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -103,6 +154,17 @@
                       <input id="wineStorageLocationInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                   </div>
 
+                  <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Bild ändern</span>
+                    </div>
+                    <input id="newWinzerOrtInput" class="left-buffer" type="file">
+                </div>
+
+            </div>
+
+            <div class="pictureContainer">
+              <img id="detailsImage" src="./../assets/images/redWine.jpg" alt="Bild vom Wein">
             </div>
 
         </div>
@@ -180,6 +242,13 @@
                   </div>
                   <input id="newWineStorageLocationInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Bild hinzufügen</span>
+                </div>
+                <input id="newWinzerOrtInput" class="left-buffer" type="file">
+            </div>
 
             </div>
 
