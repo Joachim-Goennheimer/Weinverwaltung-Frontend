@@ -1,22 +1,15 @@
+const { remote } = require('electron');
 
-const { remote } = require('electron')
-const { BrowserWindow } = remote
-
-
+const { BrowserWindow } = remote;
 
 function loginUser() {
-
-    const win = new BrowserWindow({
-        width: 1200,
-        height: 800,
-        webPreferences: {
-        nodeIntegration: true
-      }
-    })
-    win.loadFile('./src/mainWindow.html')
-    // win.webContents.openDevTools()
-
-    remote.getCurrentWindow().close();
-
-
+  const win = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+  win.loadFile('./src/mainWindow.html');
+  remote.getCurrentWindow().close();
 }
